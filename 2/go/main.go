@@ -7,8 +7,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-
-	"github.com/sanity-io/litter"
 )
 
 var (
@@ -41,10 +39,8 @@ type Reveal struct {
 func RevealFromString(r string) Reveal {
 	result := Reveal{}
 	cubes := strings.Split(r, ",")
-	litter.Dump(cubes)
 	for _, cube := range cubes {
 		parts := strings.Split(strings.TrimSpace(cube), " ")
-		litter.Dump(parts)
 		number, err := strconv.Atoi(parts[0])
 		if err != nil {
 			fmt.Println(err)
